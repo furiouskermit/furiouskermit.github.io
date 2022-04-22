@@ -31,6 +31,6 @@ input, select {
 .container {
   height: 100vh;
   max-height: 100vh;
-  background: url("/images/bg-dog1.jpg") no-repeat center center;
+  background: url("images/bg-dog1.jpg") no-repeat center center;
   background-size: cover;
 }
