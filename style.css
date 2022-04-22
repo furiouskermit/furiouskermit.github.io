@@ -1,6 +1,7 @@
 /* Default CSS */
 * {
   box-sizing: border-box;
+  letter-spacing: -1px;
 }
 body {
   margin: 0;
@@ -8,29 +9,256 @@ body {
   font-weight: 400;
   font-size: 14px;
   line-height: 1.3em;
-  color: #000;
+  color: #232323;
 }
 a {
   text-decoration: none;
-  color: #000;
+  color: #232323;
 }
 
 /* Reset CSS */
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
 ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 input, select {
-  display: inline-block;
   outline: none;
   border: none;
 }
 
 /* #### Custom CSS #### */
+/* module */
+.eng {
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+/* layout */
 .container {
   height: 100vh;
   max-height: 100vh;
   background: url("images/bg-dog1.jpg") no-repeat center center;
   background-size: cover;
+}
+.box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1200px;
+  overflow: hidden;
+}
+[class $= "-area"] {
+  padding: 20px 30px;
+  background: #fff;
+  border-radius: 20px;
+}
+.left-area {
+  float: left;
+  width: 70%;
+}
+.right-area {
+  float: right;
+  width: calc(30% - 30px);
+  margin-left: 30px;
+}
+.item-tit {
+  margin: 0 0 7px;
+}
+.item-text {
+  font-size: 15px;
+}
+
+/* scrollbar */
+:is(.item-list, .item-detail .item-text)::-webkit-scrollbar {
+  background: transparent;
+  width: 4px;
+}
+:is(.item-list, .item-detail .item-text)::-webkit-scrollbar-thumb {
+  background-color: rgba(30, 143, 255, 0.411);
+  border-radius: 20px;
+}
+:is(.item-list, .item-detail .item-text)::-webkit-scrollbar-track-piece {
+  margin: 3px 0;
+}
+
+/* left area */
+.left-area-tit {
+  margin: 0 0 10px;
+  padding: 0 0 10px;
+  font-size: 20px;
+  border-bottom: 1px solid #dedede;
+}
+.item-list {
+  max-height: 450px;
+  overflow-y: scroll;
+}
+.item-list .item {
+  width: 98%;
+  padding: 10px 0;
+  margin: 0 0 10px;
+  border-bottom: 1px solid #f1f2f3;
+  cursor: pointer;
+}
+.item-list .item-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* right area */
+.item-detail {
+  height: 780px;
+  position: relative;
+}
+.item-detail .item-text {
+  height: 750px;
+  padding-right: 10px;
+  overflow-y: scroll;
+}
+.empty {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.25em;
+  color: #cdcdcd;
+}
+.empty-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 1px solid #dedede;
+  background: url("images/corgi.png") no-repeat;
+  background-position: 50% 5px;
+  background-size: cover;
+  overflow: hidden;
+}
+.btn-wrap {
+  height: 40px;
+  clear: both;
+  text-align: center;
+  position: relative;
+}
+.btn-wrap [class ^= "btn-"] {
+  height: 40px;
+  line-height: 40px;
+  border-radius: 5px;
+  transition: 0.35s;
+}
+.btn-write {
+  float: right;
+  width: 110px;
+  background-color: dodgerblue;
+  color: #fff;
+}
+.btn-write:hover {
+  background-color: rgb(12, 113, 214);
+}
+.btn-del {
+  float: left;
+  width: 80px;
+  background-color: #fff;
+  border: 1px solid #bcbcbc;
+  color: #aaa;
+  cursor: pointer;
+}
+.btn-del:hover {
+  border-color: #eee;
+  background-color: #eee;
+  color: #777;
+}
+.tooltip {
+  position: absolute;
+  width: 110px;
+  height: 50px;
+  line-height: 50px;
+  right: 0;
+  bottom: -65px;
+  background-color: #f3f2f1;
+  display: none;
+}
+.tooltip:before {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: -5px;
+  right: 10px;
+  transform: rotate(45deg);
+  background-color: #f3f2f1;
+}
+
+/* Responsive */
+/* tablet */
+@media (max-width: 1198.98px) {
+  /* layout */
+  .container {
+    min-height: 100vh;
+    height: auto;
+    max-height: unset;
+  }
+  .box {
+    position: static;
+    top: 0;
+    left: 0;
+    transform: translate(0px, 0px);
+    width: 100%;
+    padding: 30px 14px;
+  }
+  [class $= "-area"] {
+    width: 100%;
+    float: none;
+  }
+  .right-area {
+    margin: 20px 0 0;
+  }
+
+  /* left area */
+  .left-area-tit {
+    margin: 0 0 3px;
+  }
+  .item-list {
+    max-height: 300px;
+    margin: 0 0 10px;
+  }
+
+  /* right area */
+  .item-detail {
+    height: 320px;
+  }
+  .item-detail .item-text {
+    height: 290px;
+  }
+
+}
+
+/* mobile */
+@media (max-width: 767.98px) {
+  /* layout */
+  .box {
+    padding: 25px 14px;
+  }
+  .right-area {
+    margin: 10px 0 0;
+  }
+
+  /* left area */
+  .item-list {
+    max-height: 200px;
+  }
+
+  /* right area */
+  .item-detail {
+    height: 320px;
+  }
+  .item-detail .item-text {
+    height: 290px;
+  }
 }
