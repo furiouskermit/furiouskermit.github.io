@@ -1,0 +1,36 @@
+/* Default CSS */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: 'Pretendard Variable';
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.3em;
+  color: #000;
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+/* Reset CSS */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+input, select {
+  display: inline-block;
+  outline: none;
+  border: none;
+}
+
+/* #### Custom CSS #### */
+.container {
+  height: 100vh;
+  max-height: 100vh;
+  background: url("/images/bg-dog1.jpg") no-repeat center center;
+  background-size: cover;
+}
