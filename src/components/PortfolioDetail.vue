@@ -50,10 +50,6 @@
             return {
                 detailData: this.data,
             }
-        },
-        methods: {},
-        mounted(){
-            console.log(this.detailData)
         }
     }
 </script>
