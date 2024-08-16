@@ -12,7 +12,7 @@
                             data-aos="fade-down"
                         >
                             <div class="overflow-h about-me-thumb">
-                                <img class="d-block w-100 h-100" :src="require('@/assets/AboutMeProfile.jpg')" alt="">
+                                <img class="d-block w-100 h-100" :src="'/'+require('@/assets/AboutMeProfile.jpg')" alt="">
                             </div>
                             <div class="about-me-desc">
                                 <strong class="d-block text-secondary fz-24 about-me-position">#Web Publisher</strong>

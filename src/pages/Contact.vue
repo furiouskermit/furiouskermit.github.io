@@ -13,7 +13,7 @@
         },
         computed: {
             backgroundImage(){
-                return require('@/assets/dog.jpg');
+                return '/'+require('@/assets/dog.jpg');
             }
         },
         methods: {
