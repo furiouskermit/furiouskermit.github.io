@@ -100,7 +100,7 @@
         },
         methods: {
             requestApi(date, startPage, endPage){
-                let url = `http://openapi.seoul.go.kr:8088/${process.env.VUE_APP_OPEN_API_SEOUL}/json/tbCycleUseStatus/${startPage}/${endPage}/${date}`
+                let url = `https://openapi.seoul.go.kr:8088/${process.env.VUE_APP_OPEN_API_SEOUL}/json/tbCycleUseStatus/${startPage}/${endPage}/${date}`
                 
                 const request = fetch(url, {
                     method: 'GET'
