@@ -4,13 +4,13 @@
         <header id="header">
             <div class="container-inner">
                 <div class="d-flex align-items-center header-nav">
-                    <router-link tag="div" to="/">
-                        <a :class="currentRoute === '/' ? 'active' : ''">HOME</a>
+                    <router-link tag="div" to="/HyewonLee/">
+                        <a :class="currentRoute === '/HyewonLee/' ? 'active' : ''">HOME</a>
                     </router-link>
-                    <router-link tag="div" to="/portfolio">
+                    <router-link tag="div" to="/HyewonLee/portfolio">
                         <a :class="currentRoute.indexOf('portfolio') > -1 ? 'active' : ''">PORTFOLIO</a>
                     </router-link>
-                    <router-link tag="div" to="/contact">
+                    <router-link tag="div" to="/HyewonLee/contact">
                         <a :class="currentRoute.indexOf('contact') > -1 ? 'active' : ''">CONTACT</a>
                     </router-link>
                 </div>
@@ -35,7 +35,7 @@
             </div>
         </footer>
 
-        <template v-if="currentRoute != '/contact'"><go-top-btn></go-top-btn></template>
+        <template v-if="currentRoute.indexOf('contact') === -1"><go-top-btn></go-top-btn></template>
     </div>
 </template>
 <script>
