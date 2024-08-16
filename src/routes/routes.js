@@ -11,7 +11,7 @@ Vue.use(VueRouter);
 Vue.use(common);
 
 export default new VueRouter({
-    // mode: 'history',
+    mode: 'history',
     routes: [
         { path: '/', component: Home },
         { path: '/portfolio', component: Portfolio },
