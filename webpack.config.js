@@ -1,6 +1,7 @@
 const path = require('path');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const dotenv = require('dotenv');
 dotenv.config();
 
@@ -14,7 +15,7 @@ module.exports = {
         }
     },
     entry: {
-        app: path.join(__dirname, 'main.js')
+        app: path.join(__dirname, 'main.js'),
     },
     module: {
         rules: [
@@ -42,7 +43,8 @@ module.exports = {
         new VueLoaderPlugin(),
         new webpack.DefinePlugin({
             'process.env': JSON.stringify(process.env),
-        })
+        }),
+        new HtmlWebpackPlugin(),
     ],
     output: {
         filename: '[name].js',
