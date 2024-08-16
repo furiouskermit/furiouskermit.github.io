@@ -3,7 +3,7 @@
         <!-- header -->
         <header id="header">
             <div class="container-inner">
-                <div class="d-flex align-items-center header-nav">
+                <div class="d-flex justify-content-center  align-items-center header-nav">
                     <router-link tag="div" to="/">
                         <a :class="currentRoute === '/' ? 'active' : ''">HOME</a>
                     </router-link>
@@ -18,7 +18,7 @@
         </header>
 
         <!-- content -->
-        <div id="content"><router-view></router-view></div>
+        <div id="content" class="overflow-h"><router-view></router-view></div>
 
         <!-- footer -->
         <footer id="footer">
@@ -53,7 +53,6 @@
             }
         },
     }
-
 </script>
 <style>
     /* ### header ### */
@@ -135,5 +134,31 @@
     }
     div[data-path="/contact"] #footer a:not(:hover) {
         color: #fff;
+    }
+
+    /* ### RESPONSIVE ### */
+    @media (max-width: 768px) {
+        /* ### header ### */
+        .header-nav div:not(:last-child) {
+            margin-right: 14px;
+        }
+
+        /* ### footer ### */
+        #footer {
+            padding: 20px 0 7px;
+        }
+        #footer .container-inner {
+            display: grid;
+            grid-template-columns: repeat(2, 50%);
+            grid-gap: 10px 0;
+            padding: 0 var(--mobile-padding);
+        }
+        .footer-email {
+            text-align: right;
+        }
+        .footer-sns {
+            grid-column: 1 / 3;
+            text-align: center;
+        }
     }
 </style>

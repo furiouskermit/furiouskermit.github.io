@@ -37,7 +37,7 @@
                                     <strong class="d-block word-keep home-portfolio-title">{{ p.title }}</strong>
                                     <span class="d-block fz-16 home-portfolio-content">{{ p.content.content[0].content[0].value }}</span>
                                     <span class="d-block text-muted">
-                                        <span v-for="t in p.tag" :key="t" class="home-portfolio-tag">#{{ t }}</span>
+                                        <span v-for="t in p.tag" :key="t" class="d-inline-block home-portfolio-tag">#{{ t }}</span>
                                     </span>
                                 </span>
                             </a>
@@ -96,62 +96,7 @@
 <script>
     import Vue from 'vue';
     import VueClipboard from 'vue-clipboard2';
-
-const HomeData = {
-    aboutMe: {
-        id: 'homeAboutMe',
-        title: 'About Me',
-        color: '#2361FF',
-    },
-    portfolio: {
-        id: 'homePortfolio',
-        title: 'Portfolio',
-        color: '#FFB923',
-    },
-    career: {
-        id: 'homeCareer',
-        title: 'Career',
-        color: '#1dd1a1',
-    },
-    contact: {
-        id: 'homeContact',
-        title: 'Contact',
-        color: '#FF2323',
-    },
-}
-
-const HomeCareerData = {
-    math100: {
-        id: 'careerMath100',
-        title: '(주)리미트리스',
-        date: '2021.09 ~ 2024.03',
-        position: '사원 · 웹 퍼블리셔',
-        task: ['카페24를 사용해 자사 쇼핑몰 관리(HTML, CSS, JS 수정 등)', '자사 제품 상세페이지 제작 및 기존 상세페이지 리뉴얼 작업', '자사 제품 패키지 디자인 작업', '자사 수학 문제은행 솔루션인 수학백서 프로젝트에서 웹 사이트 디자인 및 퍼블리싱 담당(HTML, CSS, JS, Jquery, Thymeleaf, Vue.js 사용)']
-    }
-}
-
-const HomeContactData = {
-    email: {
-        id: 'contactEmail',
-        title: 'Email',
-        desc: '12hyewonlee@gmail.com',
-        icon: 'ri-mail-line'
-    },
-    github: {
-        id: 'contactGithub',
-        title: 'Github',
-        desc: 'furiouskermit',
-        icon: 'ri-github-fill'
-    },
-    linkedIn: {
-        id: 'contactLinkedIn',
-        title: 'LinkedIn',
-        desc: 'hyewon-lee-b086681ab',
-        icon: 'ri-linkedin-box-fill'
-    }
-}
-    
-    // import { HomeData, HomeCareerData, HomeContactData } from '@/js/data/homeData';
+    import { HomeData, HomeCareerData, HomeContactData } from '@/js/data/homeData';
     import Loading from '@/components/Loading';
     import HomeSection from '@/components/home/HomeSection';
     import AlertModal from '@/components/modal/AlertModal';
@@ -217,13 +162,12 @@ const HomeContactData = {
     }
 </script>
 <style scoped>
+    .home-section {
+        padding: 0 40px 120px;
+    }
     .home-section:not(:last-child) {
         margin: 0 0 70px;
-        padding: 0 40px 120px;
         border-bottom: 1px dashed var(--border-color);
-    }
-    .home-section:last-child {
-        padding: 0 40px 120px;
     }
 
     /* ### About Me ### */
@@ -325,5 +269,95 @@ const HomeContactData = {
         padding: 2px;
         border-radius: 4px;
         background: #dee2e6;
+    }
+    
+    /* ### RESPONSIVE ### */
+    @media (max-width: 768px) {
+        .d-flex {
+            flex-direction: column;
+        }
+        .home-section {
+            padding: 0 var(--mobile-padding) 40px;
+        }
+        .home-section:not(:last-child) {
+            margin: 0 0 30px;
+        }
+        :is(.home-portfolio-title, .home-career-title) {
+            font-size: 28px;
+        }
+        :is(.about-me-intro, .home-career-task-item, .home-contact-info strong) {
+            font-size: 16px;
+        }
+
+        /* ### about me ### */
+        #homeAboutMe .home-section-bottom > .d-flex {
+            gap: 0px;
+        }
+        .about-me-thumb {
+            width: 100%;
+            height: 300px;
+            margin: 0 0 30px;
+            border-radius: 40px;
+        }
+        .about-me-desc {
+            width: 100%;
+        }
+        .about-me-position {
+            font-size: 18px;
+        }
+        .about-me-name {
+            margin: 10px 0;
+            font-size: 34px;
+        }
+
+        /* ### portfolio ### */
+        .home-portfolio-box:not(:last-child) {
+            margin: 0 0 60px;
+        }
+        .home-portfolio-box:nth-child(odd) {
+            padding-right: 0;
+        }
+        .home-portfolio-box:nth-child(even) {
+            padding-left: 0;
+        }
+        .home-portfolio-tag {
+            font-size: 14px;
+        }
+        .home-portfolio-thumb {
+            height: 250px;
+        }
+        .home-portfolio-thumb img {
+            width: 100%;
+        }
+        .home-portfolio-box > a:hover .home-portfolio-thumb img {
+            transform: scale(1) translateY(0px);
+        }
+        
+        /* ### career ### */
+        .home-career-left,
+        .home-career-right {
+            width: 100%;
+        }
+        .home-career-right {
+            margin: 20px 0 0;
+        }
+        .home-career-task-item {
+            display: block;
+            line-height: 1.45em;
+        }
+
+        /* ### contact ### */
+        .home-contact-box {
+            width: 100%;
+        }
+        .home-contact-icon {
+            margin: 0 0 10px;
+        }
+        .home-contact-info > .d-flex {
+            flex-direction: row;
+        }
+        .home-contact-info .fz-24 {
+            font-size: 20px;
+        }
     }
 </style>

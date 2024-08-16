@@ -3,6 +3,10 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const dotenv = require('dotenv');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
+const TerserPlugin = require('terser-webpack-plugin');
+
 dotenv.config();
 
 module.exports = {
@@ -29,11 +33,35 @@ module.exports = {
             },
             {
                 test: /\.(png|jpe?g|gif|svg|webp)$/i,
+                type: 'asset',
+                parser: {
+                    dataUrlCondition: {
+                        maxSize: 10 * 1024
+                    },
+                },
                 use: {
-                    loader: 'file-loader',
+                    // loader: 'file-loader',
+                    loader: 'image-webpack-loader',
                     options: {
-                    name: '[name].[contenthash].[ext]',
-                    esModule: false,
+                        // name: '[name].[contenthash].[ext]',
+                        // esModule: false,
+                        mozjpeg: {
+                            progressive: true,
+                            quality: 65,
+                        },
+                        opting: {
+                            enabled: false,
+                        },
+                        pngquant: {
+                            quality: [0.65, 0.9],
+                            speed: 4,
+                        },
+                        gifsicle: {
+                            interlaced: false,
+                        },
+                        webp: {
+                            quality: 75,
+                        },
                     },
                 }
             }
@@ -46,6 +74,12 @@ module.exports = {
         }),
         new HtmlWebpackPlugin({
             template: "public/index.html"
+        }),
+        new BundleAnalyzerPlugin({
+            analyzerMode: 'static',
+            reportFilename: 'bundle-report.html',
+            openAnalyzer: false,
+            excludeAssets: [/node_modules/]
         })
     ],
     output: {
@@ -53,4 +87,23 @@ module.exports = {
         path: path.join(__dirname, 'docs'),
         publicPath: '',
     },
+    optimization: {
+        minimize: true,
+        minimizer: [
+            new CssMinimizerPlugin(),
+            new TerserPlugin({
+                extractComments: false,
+                terserOptions: {
+                    format: {
+                        comments: false
+                    }
+                }
+            })
+        ]
+    },
+    performance: {
+        hints: false,
+        maxEntrypointSize: 512000,
+        maxAssetSize: 512000
+    }
 }

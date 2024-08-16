@@ -38,4 +38,21 @@
     .home-section-title {
         font-size: 80px;
     }
+
+    /* ### RESPONSIVE ### */
+    @media (max-width: 768px) {
+        .home-section-top {
+            margin: 0 0 30px;
+        }
+        .home-section:not(:first-child) .home-section-top {
+            padding: 20px 0 0;
+        }
+        .home-section-title-deco {
+            width: 10px;
+            height: 10px;
+        }
+        .home-section-title {
+            font-size: 50px;
+        }
+    }
 </style>

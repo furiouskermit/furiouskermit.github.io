@@ -330,8 +330,6 @@
     }
 
     /* --- thumbnail --- */
-    .meme-form-item-thumbnail {}
-    #userThumbnail {}
     #userThumbnailFileName {
         width: calc(100% - calc(90px + var(--btn-w-sm) + calc(var(--gap) * 2)));
     }

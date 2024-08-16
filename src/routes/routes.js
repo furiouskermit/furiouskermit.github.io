@@ -2,6 +2,7 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import common from '@/js/common';
 
+
 import Home from '@/pages/Home';
 import Portfolio from '@/pages/Portfolio';
 import Contact from '@/pages/Contact';
@@ -11,7 +12,7 @@ Vue.use(VueRouter);
 Vue.use(common);
 
 export default new VueRouter({
-    mode: 'history',
+    mode: 'hash',
     routes: [
         { path: '/', component: Home },
         { path: '/portfolio', component: Portfolio },

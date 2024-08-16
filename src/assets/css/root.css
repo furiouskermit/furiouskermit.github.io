@@ -28,4 +28,7 @@
     --search-input-height: 35px;
     --btn-w-sm: 80px;
     --gap: 5px;
+
+    /* mobile */
+    --mobile-padding: 14px;
 }

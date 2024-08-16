@@ -464,3 +464,15 @@ input[type="file"] {
     border-color: var(--point-color);
     color: var(--point-color);
 }
+
+/* ### RESPONSIVE ### */
+@media (max-width: 768px) {
+    /* ### page design ### */
+    #content {
+        min-height: unset;
+    }
+    .container-inner {
+        width: 100%;
+        padding: 0 var(--mobile-padding);
+    }
+}

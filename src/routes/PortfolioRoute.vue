@@ -43,11 +43,9 @@
                 const client = this.$getContentfulClient();
                 client.getEntry(curRoute === 'math100' ? process.env.VUE_APP_PORTFOLIO_DETAIL_MATH100 : process.env.VUE_APP_PORTFOLIO_DETAIL_SLOWFOOT).then((entry)=>{
                     this.detailData = entry.fields;
-
                     loading = setTimeout(()=>{
                         this.isLoading = false;
                     }, 500);
-
                 }).catch(console.error)
             } else {
                 this.isLoading = false;
