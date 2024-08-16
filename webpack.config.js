@@ -5,7 +5,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 module.exports = {
-    mode: 'production',
+    mode: 'development',
     devtool: 'eval',
     resolve: {
 		extensions: ['.js', '.vue'],
