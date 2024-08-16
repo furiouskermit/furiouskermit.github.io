@@ -4,13 +4,13 @@
         <header id="header">
             <div class="container-inner">
                 <div class="d-flex align-items-center header-nav">
-                    <router-link tag="div" to="/HyewonLeeVue/">
-                        <a :class="currentRoute === '/HyewonLeeVue/' ? 'active' : ''">HOME</a>
+                    <router-link tag="div" to="/">
+                        <a :class="currentRoute === '/' ? 'active' : ''">HOME</a>
                     </router-link>
-                    <router-link tag="div" to="/HyewonLeeVue/portfolio">
+                    <router-link tag="div" to="/portfolio">
                         <a :class="currentRoute.indexOf('portfolio') > -1 ? 'active' : ''">PORTFOLIO</a>
                     </router-link>
-                    <router-link tag="div" to="/HyewonLeeVue/contact">
+                    <router-link tag="div" to="/contact">
                         <a :class="currentRoute.indexOf('contact') > -1 ? 'active' : ''">CONTACT</a>
                     </router-link>
                 </div>

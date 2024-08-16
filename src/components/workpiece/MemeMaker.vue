@@ -24,7 +24,7 @@
                 <div class="meme-preview-bottom">
                     <div class="d-flex align-items-center gap-2">
                         <div class="meme-preview-user-thumbnail">
-                            <img :src="imgSrc === '' ? '/'+ require('@/assets/defaultUser.jpg') : imgSrc" alt="" class="w-100 h-100" />
+                            <img :src="imgSrc === '' ? require('@/assets/defaultUser.jpg') : imgSrc" alt="" class="w-100 h-100" />
                         </div>
                         <div class="meme-preview-head">
                             <strong class="d-block">{{ responder }}님 답변</strong>
