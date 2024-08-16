@@ -5,7 +5,7 @@
   "scripts": {
     "build": "webpack --watch",
     "dev": "webpack-dev-server --hot",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d dist",
     "predeploy": "npm run build"
   },
   "author": "",
@@ -36,5 +36,5 @@
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^5.0.4"
   },
-  "homepage": "https://furiouskermit.github.io/LeeHyewon"
+  "homepage": "https://furiouskermit.github.io/HyewonLee"
 }
