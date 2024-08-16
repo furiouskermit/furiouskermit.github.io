@@ -13,9 +13,9 @@ Vue.use(common);
 export default new VueRouter({
     mode: 'history',
     routes: [
-        { path: '/HyewonLee/', component: Home },
-        { path: '/HyewonLee/portfolio', component: Portfolio },
-        { path: '/HyewonLee/contact', component: Contact },
-        { path: '/HyewonLee/portfolio/:name', component: PortfolioRoute },
+        { path: '/HyewonLeeVue/', component: Home },
+        { path: '/HyewonLeeVue/portfolio', component: Portfolio },
+        { path: '/HyewonLeeVue/contact', component: Contact },
+        { path: '/HyewonLeeVue/portfolio/:name', component: PortfolioRoute },
     ]
 })
