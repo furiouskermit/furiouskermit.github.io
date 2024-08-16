@@ -44,7 +44,7 @@ module.exports = {
         new webpack.DefinePlugin({
             'process.env': JSON.stringify(process.env),
         }),
-        new HtmlWebpackPlugin(),
+        new HtmlWebpackPlugin()
     ],
     output: {
         filename: '[name].js',
