@@ -24,6 +24,7 @@
         padding: 0 10px;
         line-height: 1.45em;
         font-size: 16px;
+        white-space: pre-wrap;
     }
     .work-piece-troubleshooting-result-img-list {
         margin: 15px 0 0;
