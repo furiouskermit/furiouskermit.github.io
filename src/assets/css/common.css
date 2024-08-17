@@ -436,6 +436,15 @@ input[type="file"] {
     margin: 0 auto;
 }
 
+/* --- empty data --- */
+.empty-data {
+    min-height: 300px;
+}
+.empty-data-inner span {
+    margin: 5px 0 0;
+}
+
+
 /* --- pagination --- */
 .pagination {
     padding: 20px 0;

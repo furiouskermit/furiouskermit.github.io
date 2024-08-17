@@ -14,7 +14,7 @@
             </div>
 
            <div class="td-cycle-use-bottom">
-                <template v-if="dataList">
+                <template v-if="dataList.length > 0">
                     <!-- list -->
                     <table class="w-100 text-center table-list">
                         <thead>
@@ -62,7 +62,7 @@
                 </template>
 
                 <template v-else>
-                    <div>데이터가 없습니다.</div>
+                    <empty-data :text="'데이터가 없습니다'"></empty-data>
                 </template>
 
             </div>
@@ -70,10 +70,27 @@
     </div>
 </template>
 <script>
+    import EmptyData from '@/components/EmptyData';
+
     const today = new Date();
-    const defaultDate = `${today.getFullYear()}-${today.getMonth()+1}-${today.getDate()}`;
+    const defaultDate = `${today.getFullYear()}-${addPrefixToNumber(today.getMonth()+1)}-${addPrefixToNumber(today.getDate())}`;
+
+    
+
+    
+
+    function addPrefixToNumber(number){
+        if(number < 10) {
+            return `0${number}`
+        } else {
+            return `${number}`
+        }
+    }
 
     export default {
+        components: {
+            EmptyData,
+        },
         data(){
             return {
                 searchData: {
@@ -100,24 +117,33 @@
         },
         methods: {
             requestApi(date, startPage, endPage){
-                let url = `https://openapi.seoul.go.kr:8088/${process.env.VUE_APP_OPEN_API_SEOUL}/json/tbCycleUseStatus/${startPage}/${endPage}/${date}`
-                
-                const request = fetch(url, {
-                    method: 'GET'
-                }).then(response => response.json()).then(data => {
-                    this.dataList = data.useStatus.row;
+                let xhr = new XMLHttpRequest();
+                let url = `http://openapi.seoul.go.kr:8088/${process.env.VUE_APP_OPEN_API_SEOUL}/json/tbCycleUseStatus/${startPage}/${endPage}/${date}`;
 
-                    // 페이징 data
-                    const pageData = this.pageData;
-                    pageData.totalCnt = data.useStatus.list_total_count;
-                    pageData.totalPageGroupCnt = Math.ceil(pageData.totalCnt / 10);
-                }).catch(error => console.log(error))
+                xhr.open('GET', url);
+                xhr.onreadystatechange = (response) => {
+                    if(response.currentTarget.readyState == xhr.DONE) {
+                        if(xhr.status == 200 || xhr.status == 201) {
+                            const jsonData = JSON.parse(response.currentTarget.responseText);
+
+                            if(jsonData.useStatus) {
+                                this.dataList = jsonData.useStatus.row;
+
+                                // 페이징
+                                this.pageData.totalCnt = jsonData.useStatus.list_total_count;
+                                this.pageData.totalPageGroupCnt = Math.ceil(this.pageData.totalCnt / 10);
+                            }
+                        }
+                    }
+                }
+
+                xhr.send('');
             },
             searchTdCycleUse(){
                 const startDateValue = this.$refs.startDate.value;
                 this.searchData.date = startDateValue === '' ? defaultDate : startDateValue;
                 this.resetPageData(); // pageData reset
-                this.requestApi(this.searchData.date, 1, 10);
+                this.requestApi(this.searchData.date, 1, 10)
             },
             movePrevPage(){
                 this.pageData.currentPageGroup --;
