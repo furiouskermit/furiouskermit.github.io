@@ -185,6 +185,11 @@ input[type="file"] {
     line-height: var(--input-height);
     border-radius: var(--border-radius);
 }
+.search-btn {
+    height: var(--search-input-height);
+    line-height: var(--search-input-height);
+    border-radius: var(--border-radius);
+}
 .btn-w-sm {
     width: var(--btn-w-sm);
 }
@@ -342,6 +347,19 @@ input[type="file"] {
 }
 .word-break {
     word-break: break-all;
+}
+[class *= "text-elps-"] {
+    display: -webkit-box;
+    width: 100%;
+    -webkit-box-orient: vertical;
+    white-space: normal;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.text-elps-1 {
+    -webkit-line-clamp: 1;
+    
 }
 
 /* ### cursor ### */

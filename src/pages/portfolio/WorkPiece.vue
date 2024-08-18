@@ -14,7 +14,7 @@
                     <!-- tab contents -->
                     <div class="tab-contents">
                         <div v-if="currentTab === tabList[0].id" class="'tab-pane'"><word-relay :current-tab="currentTab"></word-relay></div>
-                        <div v-if="currentTab === tabList[1].id" class="'tab-pane'"><td-cycle-use :current-tab="currentTab"></td-cycle-use></div>
+                        <div v-if="currentTab === tabList[1].id" class="'tab-pane'"><open-api :current-tab="currentTab"></open-api></div>
                         <div v-if="currentTab === tabList[2].id" class="'tab-pane'"><meme-maker :current-tab="currentTab"></meme-maker></div>
                     </div>
                 </div>
@@ -55,7 +55,7 @@
 <script>
     import Loading from '@/components/Loading';
     import WordRelay from '@/components/workpiece/WordRelay';
-    import TdCycleUse from '@/components/workpiece/TdCycleUse';
+    import OpenApi from '@/components/workpiece/OpenApi';
     import MemeMaker from '@/components/workpiece/MemeMaker';
     import TroubleshootingForm from '@/components/workpiece/TroubleshootingForm';
 
@@ -65,7 +65,7 @@
         components: {
             Loading,
             WordRelay,
-            TdCycleUse,
+            OpenApi,
             MemeMaker,
             TroubleshootingForm,
         },
@@ -74,7 +74,7 @@
                 isLoading: true,
                 tabList: [
                     {name: '끝말잇기', id: 'wordRelay'},
-                    {name: '따릉이 이용 정보', id: 'tdCycleUse'},
+                    {name: '따릉이 이용 정보', id: 'openApi'},
                     {name: '네이버 지식인 밈 생성기', id: 'memeMaker'},
                 ],
                 currentTab: 'wordRelay',
@@ -107,8 +107,8 @@
                         this.currentDataId = process.env.VUE_APP_WORK_PIECE_CUSTOM_MODAL;
                     } else if(val === 'memeMaker') {
                         this.currentDataId = process.env.VUE_APP_WORK_PIECE_MEME_MAKER;
-                    } else if(val === 'tdCycleUse') {
-                        this.currentDataId = process.env.VUE_APP_WORK_PIECE_TD_CYCLE_USE;
+                    } else if(val === 'openApi') {
+                        this.currentDataId = process.env.VUE_APP_WORK_PIECE_OPEN_API;
                     }
 
                     this.getEntry(false);
@@ -133,5 +133,20 @@
         display: grid;
         grid-template-columns: repeat(2, calc(calc(100% - 30px) / 2));
         grid-gap: 30px;
+    }
+
+    /* ### RESPONSIVE ### */
+    @media (max-width: 768px) {
+        .tab {
+            margin-bottom: 20px;
+            gap: calc(var(--gap) * 2);
+        }
+        .tab-btn {
+            height: unset;
+            padding: 10px;
+            word-break: keep-all;
+            line-height: 1.35em;
+            font-size: 15px;
+        }
     }
 </style>

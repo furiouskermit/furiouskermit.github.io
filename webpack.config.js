@@ -3,7 +3,6 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const dotenv = require('dotenv');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 const TerserPlugin = require('terser-webpack-plugin');
 
@@ -75,12 +74,6 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: "public/index.html"
         }),
-        new BundleAnalyzerPlugin({
-            analyzerMode: 'static',
-            reportFilename: 'bundle-report.html',
-            openAnalyzer: false,
-            excludeAssets: [/node_modules/]
-        })
     ],
     output: {
         filename: '[name].js',

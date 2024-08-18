@@ -27,6 +27,7 @@
     #contact {
         min-height: 100vh;
         background-size: cover;
+        background-position: center center;
     }
     #contact:before {
         content: '';
@@ -58,5 +59,23 @@
     }
     #contact a:hover {
         background-color: rgba(255,255,255,0.25);
+    }
+
+    /* ### RESPONSIVE ### */
+    @media (max-width: 768px) {
+        #contact {
+            padding: 0 var(--mobile-padding);
+        }
+        #contact strong {
+            margin: 0 0 15px;
+            font-size: 50px;
+        }
+        #contact a {
+            width: 100%;
+            max-width: 300px;
+            height: 50px;
+            line-height: 50px;
+            font-size: 16px;
+        }
     }
 </style>

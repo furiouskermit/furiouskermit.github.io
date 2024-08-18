@@ -141,4 +141,54 @@
     .portfolio-list-content-right img {
         border-radius: 25px;
     }
+
+    /* ### RESPONSIVE ### */
+    @media (max-width: 768px) {
+        .d-flex {
+            flex-direction: column;
+        }
+        .container-inner {
+            padding: 0 0 45px;
+        }
+        .container-inner > strong {
+            padding: 15px 0 30px;
+            font-size: 60px;
+        }
+
+        /* ### title ### */
+        .portfolio-list-title {
+            display: block;
+            padding: 20px;
+        }
+        .portfolio-list-title strong {
+            display: block;
+        }
+        .portfolio-list-title-right {
+            margin: 4px 0 0;
+            font-size: 16px;
+        }
+
+        /* ### content ### */
+        .portfolio-list-content {
+            padding: 0 20px 20px;
+        }
+        .portfolio-list-content-left,
+        .portfolio-list-content-right {
+            width: 100%;
+        }
+        .portfolio-list-content-left {
+            padding-right: 0;
+            order: 2;
+        }
+        .portfolio-list-content-left .input-btn {
+            width: 100%;
+        }
+        .portfolio-list-content-right {
+            order: 1;
+            margin: 0 0 15px;
+        }
+        .portfolio-list-content-right img {
+            border-radius: 18px;
+        }
+    }
 </style>

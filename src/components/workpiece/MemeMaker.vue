@@ -336,4 +336,23 @@
     label[for="userThumbnail"] {
         width: 90px;
     }
+
+    /* ### RESPONSIVE ### */
+    @media (max-width: 768px) {
+        #memeMaker {
+            display: block;
+        }
+        .meme-maker-left,
+        .meme-maker-right {
+            width: 100%;
+        }
+        .meme-maker-right {
+            margin: 15px 0 0;
+        }
+
+        /* ### meme form ### */
+        .meme-form-item .form-textarea {
+            min-height: 90px;
+        }
+    }
 </style>

@@ -13,7 +13,7 @@
                 <strong class="d-block portfolio-detail-title">{{ detailData.title }}</strong>
                 <p class="word-keep fz-16 portfolio-detail-summary">{{ detailData.summary }}</p>
                 <div class="portfolio-detail-tagList">
-                    <span v-for="t in detailData.tech" class="text-muted portfolio-detail-tag" :key="t">#{{ t }}</span>
+                    <span v-for="t in detailData.tech" class="d-inline-block text-muted portfolio-detail-tag" :key="t">#{{ t }}</span>
                 </div>
                 <div>
                     <span class="d-inline-block bg-point-light portfolio-detail-contribution">{{ detailData.contribution }}</span>
@@ -113,5 +113,37 @@
     .portfolio-detail-content {
         margin: 20px 0 0;
         line-height: 1.5em;
+    }
+
+    /* ### RESPONSIVE ### */
+    @media (max-width: 768px) {
+        .portfolio-detail-top {
+            display: block;
+            margin: 0 0 40px;
+            padding: 30px 0 40px;
+        }
+
+        /* ### thumbnail & description ### */
+        /* --- description --- */
+        .portfolio-detail-desc {
+            margin: 15px 0 0;
+            padding-left: 0;
+        }
+        .portfolio-detail-btn-list {
+            margin: 20px 0 0;
+        }
+        .portfolio-detail-btn {
+            width: calc(calc(100% - calc(var(--gap) * 2)) / 2);
+        }
+        .portfolio-detail-btn:first-child:last-child {
+            width: 100%;
+        }
+
+        /* ### content ### */
+        /* --- text --- */
+        .portfolio-detail-content {
+            line-height: 1.6em;
+            font-size: 16px;
+        }
     }
 </style>
