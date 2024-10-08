@@ -74,7 +74,7 @@
                 isLoading: true,
                 tabList: [
                     {name: '끝말잇기', id: 'wordRelay'},
-                    {name: '따릉이 이용 정보', id: 'openApi'},
+                    {name: '공지사항', id: 'openApi'},
                     {name: '네이버 지식인 밈 생성기', id: 'memeMaker'},
                 ],
                 currentTab: 'wordRelay',
