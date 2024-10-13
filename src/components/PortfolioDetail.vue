@@ -20,10 +20,13 @@
                 </div>
                 <div class="d-flex align-items-center gap-2 text-center portfolio-detail-btn-list">
                     <a class="input-btn btn-black-border portfolio-detail-btn" :href="detailData.urlPc" target="_blank">
-                        {{ detailData.urlMobile ? 'PC 사이트' : '자세히 보기' }}
+                        <i class="ri-cursor-fill"></i> {{ detailData.urlMobile ? 'PC 사이트' : '자세히 보기' }}
                     </a>
                     <template v-if="detailData.urlMobile">
                         <a class="input-btn btn-black-border portfolio-detail-btn" :href="detailData.urlMobile" target="_blank">모바일 사이트</a>
+                    </template>
+                    <template v-if="detailData.urlGithub">
+                        <a class="input-btn btn-black-border portfolio-detail-btn" :href="detailData.urlGithub" target="_blank"><i class="ri-github-fill"></i> Github</a>
                     </template>
                 </div>
             </div>
