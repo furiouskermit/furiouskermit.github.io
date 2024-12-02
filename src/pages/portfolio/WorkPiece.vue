@@ -54,10 +54,10 @@
 </template>
 <script>
     import Loading from '@/components/Loading';
-    import WordRelay from '@/components/workpiece/WordRelay';
-    import OpenApi from '@/components/workpiece/OpenApi';
-    import MemeMaker from '@/components/workpiece/MemeMaker';
-    import TroubleshootingForm from '@/components/workpiece/TroubleshootingForm';
+import MemeMaker from '@/components/workpiece/MemeMaker';
+import OpenApi from '@/components/workpiece/OpenApi';
+import TroubleshootingForm from '@/components/workpiece/TroubleshootingForm';
+import WordRelay from '@/components/workpiece/WordRelay';
 
     let loading;
 
@@ -73,9 +73,9 @@
             return {
                 isLoading: true,
                 tabList: [
-                    {name: '끝말잇기', id: 'wordRelay'},
-                    {name: '공지사항', id: 'openApi'},
-                    {name: '네이버 지식인 밈 생성기', id: 'memeMaker'},
+                    {name: 'Word Relay', id: 'wordRelay'},
+                    {name: 'Notice Board', id: 'openApi'},
+                    {name: 'Meme Generator', id: 'memeMaker'},
                 ],
                 currentTab: 'wordRelay',
                 currentDataId: process.env.VUE_APP_WORK_PIECE_CUSTOM_MODAL,

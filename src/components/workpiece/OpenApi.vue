@@ -9,8 +9,8 @@
                             <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>제목</th>
-                                    <th>날짜</th>
+                                    <th>Title</th>
+                                    <th>Date</th>
                                     <th></th>
                                 </tr>
                             </thead>
@@ -55,7 +55,7 @@
                 </template>
 
                 <template v-else>
-                    <empty-data :text="'데이터가 없습니다'"></empty-data>
+                    <empty-data :text="'No data available'"></empty-data>
                 </template>
 
             </div>

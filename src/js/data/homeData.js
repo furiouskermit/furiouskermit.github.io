@@ -24,10 +24,10 @@ export const HomeData = {
 export const HomeCareerData = {
     math100: {
         id: 'careerMath100',
-        title: '(주)리미트리스',
-        date: '2021.09 ~ 2024.03',
-        position: '사원 · 웹 퍼블리셔',
-        task: ['카페24를 사용해 자사 쇼핑몰 관리(HTML, CSS, JS 수정 등)', '자사 제품 상세페이지 제작 및 기존 상세페이지 리뉴얼 작업', '자사 제품 패키지 디자인 작업', '자사 수학 문제은행 솔루션인 수학백서 프로젝트에서 웹 사이트 디자인 및 퍼블리싱 담당(HTML, CSS, JS, Jquery, Thymeleaf, Vue.js 사용)']
+        title: 'Limitless Co., Ltd.',
+        date: 'Sep 2021 - Mar 2024',
+        position: 'Junior Web Designer & Web Programmer',
+        task: ['Managed the company’s e-commerce site using Cafe24 (modifying HTML, CSS, JS, etc.)', 'Created and redesigned product detail pages', 'Responsible for website design and publishing for the Math100 project, a math problem bank solution, using HTML, CSS, JS, jQuery, Thymeleaf, and Vue.js.']
     }
 }
 

@@ -17,7 +17,7 @@
                             <div class="about-me-desc">
                                 <strong class="d-block text-secondary fz-24 about-me-position">#Web Publisher</strong>
                                 <strong class="d-block about-me-name">Lee Hyewon</strong>
-                                <p class="text-secondary fz-18 word-keep about-me-intro">안녕하세요, 사용자 친화적인 웹 퍼블리셔로서의 여정을 이어가고 있는 이혜원입니다. 웹 표준을 준수하고, 다양한 브라우저와 디바이스에서 일관된 사용자 경험을 제공하는 것을 목표로 작업하고 있습니다. 사용자 중심의 웹 사이트를 제작하며, 팀과의 원활한 협업을 통해 더 나은 결과를 창출하기 위해 항상 노력합니다.</p>
+                                <p class="text-secondary fz-18 word-keep about-me-intro">Hello, I’m Hyewon Lee, continuing my journey as a user-friendly web publisher. I strive to follow web standards and provide a consistent user experience across various browsers and devices. I focus on creating user-centered websites and always aim to produce better results through smooth collaboration with my team.</p>
                             </div>
                         </div>
                     </template>
@@ -94,12 +94,12 @@
     </div>
 </template>
 <script>
-    import Vue from 'vue';
-    import VueClipboard from 'vue-clipboard2';
-    import { HomeData, HomeCareerData, HomeContactData } from '@/js/data/homeData';
     import Loading from '@/components/Loading';
-    import HomeSection from '@/components/home/HomeSection';
-    import AlertModal from '@/components/modal/AlertModal';
+import HomeSection from '@/components/home/HomeSection';
+import AlertModal from '@/components/modal/AlertModal';
+import { HomeCareerData, HomeContactData, HomeData } from '@/js/data/homeData';
+import Vue from 'vue';
+import VueClipboard from 'vue-clipboard2';
 
     VueClipboard.config.autoSetContainer = true;
     Vue.use(VueClipboard);

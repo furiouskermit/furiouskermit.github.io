@@ -1,7 +1,7 @@
 <template>
     <div id="memeMaker" class="d-flex align-items-start justify-content-center">
         <div class="meme-maker-left">
-            <strong class="d-block">미리보기</strong>
+            <strong class="d-block">Preview</strong>
             <div ref="capture" class="meme-preview">
                 <div class="meme-preview-top">
                     <div class="meme-preview-head">
@@ -82,7 +82,7 @@
                             태그
                             <span class="guide-wrap">
                                 <span class="guide-icon"><i class="ri-information-line"></i></span>
-                                <span class="guide-content">쉼표를 입력하여 태그를 등록할 수 있습니다.</span>
+                                <span class="guide-content">Type a comma(,) followed by your keyword or keywords, with no spaces.</span>
                             </span>
                         </span>
                         <input type="text" class="form-input" v-model="tag" placeholder="태그 입력" />
@@ -92,8 +92,8 @@
                         <div class="d-flex align-items-center gap-1 meme-form-item-thumbnail">
                             <input type="file" id="userThumbnail" class="d-none" @change="onChangeThumbnail" />
                             <input type="text" id="userThumbnailFileName" class="form-input" v-model="imgName" readonly>
-                            <label for="userThumbnail" class="input-btn bg-point text-center cursor-pointer">파일 선택</label>
-                            <button type="button" class="input-btn btn-w-sm bg-plain" @click="resetThumbnail">초기화</button>
+                            <label for="userThumbnail" class="input-btn bg-point text-center cursor-pointer">Choose File</label>
+                            <button type="button" class="input-btn btn-w-sm bg-plain" @click="resetThumbnail">Reset</button>
                         </div>
                     </div>
                     <div class="meme-form-item">
@@ -113,7 +113,7 @@
                         <textarea class="form-textarea" v-model="respond" placeholder="답변 입력"></textarea>
                     </div>
                 </div>
-                <button type="button" class="w-100 input-btn bg-point" @click="downloadBtn">생성하기</button>
+                <button type="button" class="w-100 input-btn bg-point" @click="downloadBtn">Create</button>
             </form>
         </div>
     </div>

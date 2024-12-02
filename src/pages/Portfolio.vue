@@ -39,7 +39,7 @@
                                 </span>
                                 <span class="d-block">
                                     <router-link tag="span" :to="list.routerLink">
-                                        <a class="input-btn btn-black-border text-center portfolio-list-content-btn">자세히 보기</a>
+                                        <a class="input-btn btn-black-border text-center portfolio-list-content-btn">View more</a>
                                     </router-link>
                                 </span>
                             </span>

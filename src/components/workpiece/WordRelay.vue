@@ -1,16 +1,16 @@
 <template>
     <div id="wordRelay" class="portfolio-game-container">
-        <strong class="d-block fz-xl">끝말잇기 게임</strong>
+        <strong class="d-block fz-xl">Word Relay</strong>
         <div class="fz-18 portfolio-game-question">{{ wordRelayText }}</div>
         <div class="d-flex align-items-center justify-content-center gap-1">
             <form class="d-flex align-items-center gap-1" @submit.prevent="onSubmitForm">
-                <input type="text" class="form-input" ref="wordRelayInput" maxlength="4" v-model="value" placeholder="단어 입력" @keyup="onKeyupEvent" />
-                <button class="btn-w-sm input-btn bg-point">입력</button>
+                <input type="text" class="form-input" ref="wordRelayInput" maxlength="4" v-model="value" placeholder="Type a word." @keyup="onKeyupEvent" />
+                <button class="btn-w-sm input-btn bg-point">Enter</button>
             </form>
-            <button type="button" class="btn-w-sm input-btn bg-plain" @click="resetWordRelay">초기화</button>
+            <button type="button" class="btn-w-sm input-btn bg-plain" @click="resetWordRelay">Reset</button>
         </div>
         <div class="font-16 portfolio-game-memo">
-            <span>남은 목숨: </span>
+            <span>Death Count: </span>
             <span class="text-warning">{{ deathCount }}</span>
         </div>
 
