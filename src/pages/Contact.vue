@@ -1,7 +1,7 @@
 <template>
     <div class="d-flex flex-column justify-content-center text-center" id="contact" :style="{ 'background-image': `url(${backgroundImage})` }">
         <strong>Contact Me</strong>
-        <a href="https://drive.google.com/file/d/1qLn6HZ4ciEHn9y8y9rHQoFYp0u25oJaz/view?usp=sharing" target="_blank" @mouseenter="onHoverBtn(true)" @mouseleave="onHoverBtn(false)">{{ btnText }} <i class="ri-arrow-right-line"></i></a>
+        <a href="https://drive.google.com/file/d/1xBWiEFcvZHB8rsgUaPK63GUms6B8FnKT/view?usp=drive_link" target="_blank" @mouseenter="onHoverBtn(true)" @mouseleave="onHoverBtn(false)">{{ btnText }} <i class="ri-arrow-right-line"></i></a>
     </div>
 </template>
 <script>
@@ -18,7 +18,7 @@
         },
         methods: {
             onHoverBtn(boolean){
-                this.btnText = boolean ? '이력서 열람하기' : 'Lee Hyewon, Web Publisher';
+                this.btnText = boolean ? 'View Resume' : 'Lee Hyewon, Web Publisher';
             }
         },
     }
