@@ -8,7 +8,7 @@
     export default {
         data(){
             return {
-                btnText: 'Lee Hyewon, Web Publisher'
+                btnText: 'Lee Hyewon, Front Engineer'
             }
         },
         computed: {
@@ -18,7 +18,7 @@
         },
         methods: {
             onHoverBtn(boolean){
-                this.btnText = boolean ? 'View Resume' : 'Lee Hyewon, Web Publisher';
+                this.btnText = boolean ? 'View Resume' : 'Lee Hyewon, Front Engineer';
             }
         },
     }

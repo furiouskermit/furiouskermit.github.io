@@ -15,9 +15,9 @@
                                 <img class="d-block w-100 h-100" :src="require('@/assets/AboutMeProfile.jpg')" alt="">
                             </div>
                             <div class="about-me-desc">
-                                <strong class="d-block text-secondary fz-24 about-me-position">#Web Publisher</strong>
+                                <strong class="d-block text-secondary fz-24 about-me-position">#Front_Engineer</strong>
                                 <strong class="d-block about-me-name">Lee Hyewon</strong>
-                                <p class="text-secondary fz-18 word-keep about-me-intro">Hello, I’m Hyewon Lee, continuing my journey as a user-friendly web publisher. I strive to follow web standards and provide a consistent user experience across various browsers and devices. I focus on creating user-centered websites and always aim to produce better results through smooth collaboration with my team.</p>
+                                <p class="text-secondary fz-18 word-keep about-me-intro">Hello, I’m Hyewon Lee, a front-end developer focused on creating user-centered websites that provide a consistent experience across browsers and devices. I aim to deliver high-quality results through smooth collaboration with my team.</p>
                             </div>
                         </div>
                     </template>

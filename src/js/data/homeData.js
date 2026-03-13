@@ -26,8 +26,8 @@ export const HomeCareerData = {
         id: 'careerMath100',
         title: 'Limitless Co., Ltd.',
         date: 'Sep 2021 - Mar 2024',
-        position: 'Junior Web Designer & Web Programmer',
-        task: ['Managed the company’s e-commerce site using Cafe24 (modifying HTML, CSS, JS, etc.)', 'Created and redesigned product detail pages', 'Responsible for website design and publishing for the Math100 project, a math problem bank solution, using HTML, CSS, JS, jQuery, Thymeleaf, and Vue.js.']
+        position: 'Junior Front Engineer',
+        task: ['Managed the company’s e-commerce site using Cafe24 (modifying HTML, CSS, JS, etc.)', 'Created and redesigned product detail pages', 'Responsible for developing and implementing the front-end of the Math100 project, a math problem bank solution, using HTML, CSS, JavaScript, jQuery, Thymeleaf, and Vue.js.']
     }
 }
 
